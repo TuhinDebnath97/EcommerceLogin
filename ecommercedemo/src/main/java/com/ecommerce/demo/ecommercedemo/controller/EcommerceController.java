@@ -10,31 +10,28 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ecommerce.demo.ecommercedemo.entity.LoginData;
 import com.ecommerce.demo.ecommercedemo.service.EcommerceService;
 
-
-
 @RestController
 @RequestMapping("/login")
 public class EcommerceController {
 
 	@Autowired
 	EcommerceService service;
-	
+
 	@PostMapping("/user")
-	@CrossOrigin(origins="http://localhost:4200")
-	public LoginData getLoginUser(@RequestBody LoginData data) throws Exception{
-		String tempEmailId=data.getUserId();
-		String tempPassword=data.getPassword();
-		
-		
-		LoginData dataobj=null;
-		if(tempEmailId != null && tempPassword != null) {
+	@CrossOrigin(origins = "http://localhost:4200")
+	public LoginData getLoginUser(@RequestBody LoginData data) throws Exception {
+		String tempEmailId = data.getUserId();
+		String tempPassword = data.getPassword();
+
+		LoginData dataobj = null;
+		if (tempEmailId != null && tempPassword != null) {
 			dataobj = service.validate(tempEmailId, tempPassword);
 
 		}
-		if(dataobj == null) {
+		if (dataobj == null) {
 			throw new Exception("Wrong username or password");
 		}
-		
-		return new LoginData(data.getUserId(),null);
+
+		return new LoginData(data.getUserId(), null);
 	}
 }
