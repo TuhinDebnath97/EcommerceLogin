@@ -6,17 +6,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="user_data")
+@Table(name = "user_data")
 public class LoginData {
 
 	@Id
-	@Column(name="user_id")
+	@Column(name = "user_id")
 	private String userId;
 	private String password;
-	
+
 	public LoginData() {
 		super();
-		
+
 	}
 
 	public LoginData(String userId, String password) {
@@ -40,7 +40,5 @@ public class LoginData {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-	
+
 }
