@@ -26,7 +26,6 @@ public class EcommerceController {
 		LoginData dataobj = null;
 		if (tempEmailId != null && tempPassword != null) {
 			dataobj = service.validate(tempEmailId, tempPassword);
-
 		}
 		if (dataobj == null) {
 			throw new Exception("Wrong username or password");
