@@ -11,9 +11,9 @@ public class EcommerceService {
 
 	@Autowired
 	UserRepository repo;
-	
+
 	public LoginData validate(String email, String password) {
-		
+
 		return repo.findByUserIdAndPassword(email, password);
 	}
 }
