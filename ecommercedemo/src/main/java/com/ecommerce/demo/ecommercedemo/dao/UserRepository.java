@@ -6,6 +6,7 @@ import com.ecommerce.demo.ecommercedemo.entity.LoginData;
 
 @Repository
 public interface UserRepository extends JpaRepository<LoginData, String> {
-
+	
+	
 	public LoginData findByUserIdAndPassword(String email, String password);
 }
